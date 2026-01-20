@@ -1,0 +1,2 @@
+# einkaufsmanager
+Private Einkaufsliste
