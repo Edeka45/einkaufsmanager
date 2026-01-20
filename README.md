@@ -10,39 +10,61 @@
   --green:#007d3c;
   --green-light:#2ecc71;
   --bg:#f4f6f7;
-  --card:#fff;
-  --border:#ddd;
-  --text:#222;
+  --card:#ffffff;
+  --border:#dddddd;
+  --text:#222222;
   --danger:#c0392b;
 }
-*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
-body{background:var(--bg);color:var(--text)}
 
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
 header{
   background:var(--green);
   color:#fff;
   padding:1rem;
   display:flex;
   justify-content:space-between;
-  align-items:center
+  align-items:center;
 }
-nav{display:flex;gap:.5rem;align-items:center}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+
 nav button{
-  background:rgba(255,255,255,.2);
+  background:rgba(255,255,255,.18);
   border:none;
   color:#fff;
   padding:.6rem 1rem;
   border-radius:8px;
   font-weight:600;
-  cursor:pointer
+  cursor:pointer;
 }
-nav button.active{background:#fff;color:var(--green)}
+
+nav button.active{
+  background:#fff;
+  color:var(--green);
+}
 
 .cart-icon{
   position:relative;
   font-size:1.4rem;
-  cursor:pointer
+  cursor:pointer;
 }
+
 .cart-count{
   position:absolute;
   top:-6px;
@@ -50,35 +72,42 @@ nav button.active{background:#fff;color:var(--green)}
   background:#ffcc00;
   color:#000;
   font-size:.7rem;
-  font-weight:700;
+  font-weight:800;
   padding:2px 6px;
-  border-radius:12px
+  border-radius:12px;
 }
 
-.view{display:none}
-.view.active{display:block}
-
+/* STATUS */
 .status{
   padding:.6rem 1rem;
   font-size:.85rem;
-  color:#555
+  color:#444;
 }
 
+/* VIEWS */
+.view{display:none;}
+.view.active{display:block;}
+
 /* SHOP */
-.shop-toolbar{padding:1rem}
+.shop-toolbar{
+  padding:1rem;
+}
+
 .shop-toolbar input{
   width:100%;
   padding:.7rem;
+  font-size:1rem;
   border-radius:8px;
   border:1px solid var(--border);
-  font-size:1rem
 }
+
 .product-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
   gap:1rem;
-  padding:1rem
+  padding:1rem;
 }
+
 .product-card{
   background:var(--card);
   border:1px solid var(--border);
@@ -86,15 +115,21 @@ nav button.active{background:#fff;color:var(--green)}
   padding:1rem;
   display:flex;
   flex-direction:column;
-  position:relative
+  position:relative;
 }
-.product-card.selected{outline:3px solid var(--green-light)}
+
+.product-card.selected{
+  outline:3px solid var(--green-light);
+}
+
 .product-card img{
   width:100%;
-  height:140px;
+  height:130px;
   object-fit:contain;
-  margin-bottom:.5rem
+  background:#f0f0f0;
+  margin-bottom:.5rem;
 }
+
 .qty-badge{
   position:absolute;
   top:8px;
@@ -104,25 +139,34 @@ nav button.active{background:#fff;color:var(--green)}
   font-size:.75rem;
   font-weight:700;
   padding:3px 7px;
-  border-radius:12px
+  border-radius:12px;
 }
+
 .shop-controls{
   display:flex;
   justify-content:center;
   align-items:center;
   gap:.6rem;
-  margin-top:auto
+  margin-top:auto;
 }
+
 .shop-controls button{
-  width:36px;height:36px;
-  border:none;border-radius:50%;
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
   background:var(--green);
   color:#fff;
   font-size:1.2rem;
   font-weight:700;
-  cursor:pointer
+  cursor:pointer;
 }
-.shop-controls span{min-width:24px;text-align:center;font-weight:700}
+
+.shop-controls span{
+  min-width:24px;
+  text-align:center;
+  font-weight:700;
+}
 
 /* LISTEN */
 .list-manager{
@@ -130,59 +174,76 @@ nav button.active{background:#fff;color:var(--green)}
   background:#fff;
   border-bottom:1px solid var(--border);
   display:flex;
-  gap:.5rem;
+  gap:.6rem;
   flex-wrap:wrap;
-  align-items:center
+  align-items:center;
 }
+
 .list-manager select{
   padding:.6rem;
   border-radius:8px;
-  border:1px solid var(--border)
+  border:1px solid var(--border);
 }
+
 .list-btn{
   padding:.6rem .9rem;
   border:none;
   border-radius:8px;
   font-weight:600;
-  cursor:pointer
+  cursor:pointer;
 }
-.list-btn.new{background:var(--green);color:#fff}
-.list-btn.rename{background:#2980b9;color:#fff}
-.list-btn.delete{background:var(--danger);color:#fff}
 
-.cart-list{list-style:none;padding:1rem}
+.list-btn.new{background:var(--green);color:#fff;}
+.list-btn.rename{background:#2980b9;color:#fff;}
+.list-btn.delete{background:var(--danger);color:#fff;}
+
+.cart-list{
+  list-style:none;
+  padding:1rem;
+}
+
 .cart-list li{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:.6rem 0;
-  border-bottom:1px solid var(--border)
+  border-bottom:1px solid var(--border);
 }
+
 .cart-list button{
-  width:32px;height:32px;
-  border:none;border-radius:50%;
+  width:32px;
+  height:32px;
+  border:none;
+  border-radius:50%;
   background:var(--green);
   color:#fff;
   font-weight:700;
-  cursor:pointer
+  cursor:pointer;
 }
 
 /* COSTS */
 .cost-table{
   width:100%;
   border-collapse:collapse;
-  margin:1rem
+  margin:1rem;
 }
-.cost-table th,.cost-table td{
+
+.cost-table th,
+.cost-table td{
   border-bottom:1px solid var(--border);
   padding:.6rem;
-  text-align:left
+  text-align:left;
 }
-.cost-total{padding:1rem;font-weight:800}
 
+.cost-total{
+  padding:1rem;
+  font-weight:800;
+}
+
+/* PRINT */
 @media print{
-  header,nav,.shop-toolbar,.product-grid,.list-manager{display:none}
-  body{font-size:11px}
+  header,nav,.shop-toolbar,.product-grid,.list-manager{display:none;}
+  body{font-size:11px;}
 }
 </style>
 </head>
@@ -209,7 +270,7 @@ nav button.active{background:#fff;color:var(--green)}
 
 <section id="shop-view" class="view active">
   <div class="shop-toolbar">
-    <input type="search" placeholder="Produkt suchen…" oninput="searchProducts(this.value)">
+    <input type="search" placeholder="Produkt suchen (z. B. Wurst, Käse, Milch)" oninput="searchProducts(this.value)">
   </div>
   <div class="product-grid" id="productGrid"></div>
 </section>
@@ -223,7 +284,7 @@ nav button.active{background:#fff;color:var(--green)}
   </div>
   <ul class="cart-list" id="cartList"></ul>
   <div style="padding:1rem">
-    <button onclick="window.print()">🖨️ Drucken</button>
+    <button onclick="window.print()">🖨️ Einkaufsliste drucken</button>
   </div>
 </section>
 
@@ -240,16 +301,17 @@ nav button.active{background:#fff;color:var(--green)}
 </main>
 
 <script>
+/* STABILE PRODUKTDATEN + BILDER (öffentlich & zuverlässig) */
 const products=[
- {id:1,name:"EDEKA Bio Salami",price:2.49,img:"https://cdn.produkte.edeka/4311501758397.jpg"},
- {id:2,name:"EDEKA Gouda Scheiben",price:1.99,img:"https://cdn.produkte.edeka/4311501402375.jpg"},
- {id:3,name:"Frischkäse Natur",price:0.89,img:"https://cdn.produkte.edeka/4311501758397.jpg"},
- {id:4,name:"Bio Milch 3,5%",price:1.49,img:"https://cdn.produkte.edeka/4311501402375.jpg"}
+ {id:1,name:"Salami",price:2.49,img:"https://upload.wikimedia.org/wikipedia/commons/3/3a/Salami_slices.jpg"},
+ {id:2,name:"Gouda Käse",price:1.99,img:"https://upload.wikimedia.org/wikipedia/commons/8/89/Gouda_cheese.jpg"},
+ {id:3,name:"Milch 1L",price:1.49,img:"https://upload.wikimedia.org/wikipedia/commons/a/a4/Milk_glass.jpg"},
+ {id:4,name:"Frischkäse",price:0.89,img:"https://upload.wikimedia.org/wikipedia/commons/1/19/Cream_cheese.jpg"},
+ {id:5,name:"Butter",price:1.79,img:"https://upload.wikimedia.org/wikipedia/commons/2/2d/Butter.jpg"},
+ {id:6,name:"Brot",price:2.29,img:"https://upload.wikimedia.org/wikipedia/commons/0/0f/Bread_loaf.jpg"}
 ];
 
-let lists = JSON.parse(localStorage.getItem("lists")) || {
-  "Master Liste":[]
-};
+let lists = JSON.parse(localStorage.getItem("lists")) || {"Master Liste":[]};
 let activeList = localStorage.getItem("activeList") || "Master Liste";
 
 function save(){
@@ -259,7 +321,7 @@ function save(){
 }
 
 function updateUI(){
-  document.getElementById("activeListName").textContent=activeList;
+  document.getElementById("activeListName").textContent = activeList;
   updateListSelect();
   renderProducts(products);
   renderList();
@@ -270,10 +332,6 @@ function updateUI(){
 function updateCartCount(){
   document.getElementById("cartCount").textContent =
     lists[activeList].reduce((s,p)=>s+p.qty,0);
-}
-
-function goToList(){
-  document.querySelector('[data-view="list"]').click();
 }
 
 function updateListSelect(){
@@ -288,12 +346,10 @@ function updateListSelect(){
 }
 
 function switchList(name){activeList=name;save();}
-
 function createList(){
   const n=prompt("Name der neuen Liste:");
   if(n && !lists[n]){lists[n]=[];activeList=n;save();}
 }
-
 function renameList(){
   const n=prompt("Neuer Name:",activeList);
   if(n && !lists[n]){
@@ -303,7 +359,6 @@ function renameList(){
     save();
   }
 }
-
 function deleteList(){
   if(activeList==="Master Liste") return alert("Master Liste kann nicht gelöscht werden");
   if(confirm("Liste wirklich löschen?")){
@@ -336,7 +391,7 @@ function renderProducts(list){
     g.innerHTML+=`
       <div class="product-card ${f?"selected":""}">
         ${f?`<div class="qty-badge">x${f.qty}</div>`:""}
-        <img src="${p.img}">
+        <img src="${p.img}" alt="${p.name}">
         <strong>${p.name}</strong>
         <div class="shop-controls">
           <button onclick="changeQty(${p.id},-1)">−</button>
@@ -385,6 +440,10 @@ function renderCosts(){
 function searchProducts(t){
   t=t.toLowerCase();
   renderProducts(products.filter(p=>p.name.toLowerCase().includes(t)));
+}
+
+function goToList(){
+  document.querySelector('[data-view="list"]').click();
 }
 
 document.querySelectorAll("nav button").forEach(b=>{
